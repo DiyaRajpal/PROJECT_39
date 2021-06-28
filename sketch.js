@@ -15,12 +15,12 @@ var gameOver, restart;
 
 
 function preload(){
-  trex_running =   loadAnimation("trex1.jpg","trex3.jpg","trex4.jpg");
-  trex_collided = loadAnimation("trex_collided.jpg");
+  trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
+  trex_collided = loadAnimation("trex_collided.png");
   
   backgroundImg = loadImage("bg.jpg");
   
-  cloudImage = loadImage("cloud.jpg");
+  cloudImage = loadImage("cloud.png");
   
   obstacle1 = loadImage("obstacle1.png");
   obstacle2 = loadImage("obstacle2.png");
@@ -30,7 +30,7 @@ function preload(){
   obstacle6 = loadImage("obstacle6.png");
   
   gameOverImg = loadImage("gameOver.png");
-  restartImg = loadImage("restart.jpg");
+  restartImg = loadImage("restart.png");
 }
 
 function setup() {
@@ -44,14 +44,14 @@ function setup() {
   
   ground = createSprite(width/2,height-10,width,20);
   //ground.addImage("ground",groundImage);
-  ground.x = ground.width /2;
+  ground.x = ground.width/2+150;
   ground.velocityX = -(6 + 3*score/100);
   ground.shapeColor="green";
-  gameOver = createSprite(300,100);
+  gameOver = createSprite(displayWidth/2,220);
   gameOver.addImage(gameOverImg);
  
 
-  restart = createSprite(300,140);
+  restart = createSprite(displayWidth/2,300);
   restart.addImage(restartImg);
   
   gameOver.scale = 0.05;
