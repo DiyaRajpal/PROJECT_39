@@ -19,7 +19,7 @@ function preload(){
   trex_collided = loadAnimation("trex_collided.png");
   
   backgroundImg = loadImage("bg.jpg");
-  
+  groundImage = loadImage("ground.jpeg");
   cloudImage = loadImage("cloud.png");
   
   obstacle1 = loadImage("obstacle1.png");
@@ -43,8 +43,8 @@ function setup() {
   trex.scale = 1.4;
   
   ground = createSprite(width/2,height-10,width,20);
-  //ground.addImage("ground",groundImage);
-  ground.x = ground.width/2+150;
+  ground.addImage("ground",groundImage);
+  ground.x = ground.width/2;
   ground.velocityX = -(6 + 3*score/100);
   ground.shapeColor="green";
   gameOver = createSprite(displayWidth/2,220);
